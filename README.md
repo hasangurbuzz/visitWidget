@@ -1,39 +1,19 @@
-# Welcome to Remix!
+## Visit Widget
 
-- [Remix Docs](https://remix.run/docs)
+A Remix service for creating visit counter widget.
 
-## Development
+### Usage:
 
-From your terminal:
-
-```sh
-npm run dev
+- #### With Curl:
+```
+GET https://visit-widget.vercel.app/api
+Query Params(Required) : username: string, content: string
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-
-First, build your app for production:
-
-```sh
-npm run build
+- #### With Markdown:
+```
+[![](https://visit-widget.vercel.app/api?username={YOURUSERNAME}&content={DISPLAYCONTENT})](https://github.com/hasangurbuzz/visitWidget)
 ```
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
+#### Note: 
+Counter will be reset every week
