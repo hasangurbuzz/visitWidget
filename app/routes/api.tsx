@@ -11,8 +11,10 @@ export async function loader({
     const params = exportParams(request);
     const {username, content} = params;
 
-    const count = await get(username) || 0;
+    let count = await get(username) || 0;
     await set(username, count + 1);
+
+    count = await get(username) || 0
 
     const component = renderToString(
         <VisitsComponent content={`${content}: ${count}`}/>
