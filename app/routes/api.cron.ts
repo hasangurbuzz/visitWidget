@@ -8,5 +8,6 @@ export async function loader({
         return new Response("Unauthorized", {status: 401})
     }
 
-    reset()
+    await reset()
+    return "OK"
 }
