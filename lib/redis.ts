@@ -7,13 +7,17 @@ const redis = new Redis({
 
 const set = async (key: string, value: number) => {
     const result = await redis.set(key, value)
-    if (result != "OK"){
+    if (result != "OK") {
         throw new Error("Error happened")
     }
 }
 
-const get = async (key: string) : Promise<number | null> => {
+const get = async (key: string): Promise<number | null> => {
     return await redis.get(key)
 }
 
-export {redis, set, get}
+const reset = () => {
+    redis.flushall()
+}
+
+export {redis, set, get, reset}
