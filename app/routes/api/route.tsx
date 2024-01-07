@@ -1,8 +1,8 @@
-import { renderToString } from "react-dom/server";
+import {renderToString} from "react-dom/server";
 import VisitsComponent from "../../components/VisitsComponent";
-import { LoaderFunctionArgs } from "@remix-run/node";
-import { exportParams } from "../../../lib/util";
-import { get, set } from "../../../lib/redis";
+import {LoaderFunctionArgs} from "@remix-run/node";
+import {exportParams} from "../../../lib/util";
+import {get, set} from "../../../lib/redis";
 
 export async function loader({
                                  request,
