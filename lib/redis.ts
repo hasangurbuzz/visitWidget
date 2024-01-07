@@ -16,8 +16,9 @@ const get = async (key: string): Promise<number | null> => {
     return await redis.get(key)
 }
 
-const reset = () => {
-    redis.flushall()
+const reset = async () => {
+    await redis.flushdb()
+    await redis.flushall()
 }
 
 export {redis, set, get, reset}
